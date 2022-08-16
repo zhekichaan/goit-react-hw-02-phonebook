@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from 'prop-types';
 
 export const Contacts = ({contacts, filter, deleteContact}) => {
   return (
@@ -11,6 +12,12 @@ export const Contacts = ({contacts, filter, deleteContact}) => {
       ))}
     </ContactsList>
   )
+}
+
+Contacts.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  filter: PropTypes.string.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 }
 
 const ContactsList = styled.ul`

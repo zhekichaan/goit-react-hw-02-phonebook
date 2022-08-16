@@ -1,12 +1,19 @@
 import { Box } from "components/Box";
 import { Component } from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
+
 
 export class Filter extends Component {
     state = {
         filter: ''
     }
 
+    static propTypes = {
+        filter: PropTypes.string.isRequired,
+        updateFilter: PropTypes.func.isRequired,
+    }
+    
     handleChange = (e) => {
        const value = e.target.value
        this.setState({ filter: value });

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { nanoid } from "nanoid";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 export class Phonebook extends Component  {
     state = {
@@ -8,9 +9,14 @@ export class Phonebook extends Component  {
         number: ''
     }
 
+    static propTypes = {
+        contacts: PropTypes.array.isRequired,
+        updateContacts: PropTypes.func.isRequired
+    }
+
     handleSubmit = (e) => {
         e.preventDefault()
-          if(this.props.state.contacts.filter(e => e.name === this.state.name).length === 0) {
+          if(this.props.contacts.filter(e => e.name === this.state.name).length === 0) {
             this.props.updateContacts(nanoid(), this.state.name, this.state.number)
             this.setState({
                 name: '',

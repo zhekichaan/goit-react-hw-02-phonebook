@@ -37,7 +37,7 @@ export class App extends Component {
     return (
       <Box p="20px">
         <h2>Phonebook</h2>
-        <Phonebook state={this.state} updateContacts={this.updateContacts} />
+        <Phonebook contacts={this.state.contacts} updateContacts={this.updateContacts} />
 
         <h2>Contacts</h2>
         <Filter filter={this.state.filter} updateFilter={this.updateFilter} />
