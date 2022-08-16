@@ -1,7 +1,7 @@
 import { Box } from "components/Box";
 import { Component } from "react";
-import styled from "styled-components";
 import PropTypes from 'prop-types';
+import { FilterInput } from "./Filter.styled";
 
 
 export class Filter extends Component {
@@ -34,7 +34,3 @@ export class Filter extends Component {
         )
     }
 }
-
-const FilterInput = styled.input`
-    margin: 5px 0px 20px;
-`

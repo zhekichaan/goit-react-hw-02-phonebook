@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { nanoid } from "nanoid";
-import styled from "styled-components";
 import PropTypes from 'prop-types';
+import { PhonebookForm } from "./Phonebook.styled";
 
 export class Phonebook extends Component  {
     state = {
@@ -63,21 +63,3 @@ export class Phonebook extends Component  {
         )
     }
 }
-
-const PhonebookForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    border: 1px solid black;
-    padding: 15px;
-    margin: 20px 0 50px;
-
-    & input {
-        margin: 8px 0 16px;
-        width: 200px;
-    }
-
-    & button {
-        width: 150px;
-    }
-`

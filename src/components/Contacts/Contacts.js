@@ -1,5 +1,5 @@
-import styled from "styled-components"
 import PropTypes from 'prop-types';
+import { ContactsList, ContactsItem } from './Contacts.styled';
 
 export const Contacts = ({contacts, filter, deleteContact}) => {
   return (
@@ -20,15 +20,3 @@ Contacts.propTypes = {
   deleteContact: PropTypes.func.isRequired,
 }
 
-const ContactsList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 0px;
-`
-
-const ContactsItem = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-`
