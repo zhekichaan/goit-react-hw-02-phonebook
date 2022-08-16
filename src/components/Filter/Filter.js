@@ -1,4 +1,6 @@
+import { Box } from "components/Box";
 import { Component } from "react";
+import styled from "styled-components";
 
 export class Filter extends Component {
     state = {
@@ -13,12 +15,19 @@ export class Filter extends Component {
 
     render() {
         return (
-            <input 
-                type="text"
-                name="filter"
-                value={this.state.filter}
-                onChange={this.handleChange}
-            />
+            <Box mt="20px">
+                <p>Find contacts by name</p>
+                <FilterInput 
+                    type="text"
+                    name="filter"
+                    value={this.state.filter}
+                    onChange={this.handleChange}
+                />
+            </Box>
         )
     }
 }
+
+const FilterInput = styled.input`
+    margin: 5px 0px 20px;
+`
