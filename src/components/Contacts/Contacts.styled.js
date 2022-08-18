@@ -7,8 +7,3 @@ export const ContactsList = styled.ul`
   margin: 0px;
 `
 
-export const ContactsItem = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-`

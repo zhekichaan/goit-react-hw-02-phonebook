@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
-import { ContactsList, ContactsItem } from './Contacts.styled';
+import { ContactsList } from './Contacts.styled';
+import { ContactsItem } from 'components/ContactsItem/ContactsItem';
 
-export const Contacts = ({contacts, filter, deleteContact}) => {
+export const Contacts = ({contacts, deleteContact}) => {
   return (
     <ContactsList id="contacts">
-      {contacts.filter(contact => contact.name.toLowerCase().includes(filter)).map((contact) => (
-          <ContactsItem key={contact.id}>
-            <p>{contact.name}: {contact.number}</p>
-            <button onClick={() => deleteContact(contact.id)}>Delete</button>
-          </ContactsItem>
+      {contacts.map((contact) => (
+          <ContactsItem key={contact.id} name={contact.name} number={contact.number} id={contact.id} deleteContact={deleteContact} />
       ))}
     </ContactsList>
   )
@@ -16,7 +14,6 @@ export const Contacts = ({contacts, filter, deleteContact}) => {
 
 Contacts.propTypes = {
   contacts: PropTypes.array.isRequired,
-  filter: PropTypes.string.isRequired,
   deleteContact: PropTypes.func.isRequired,
 }
 

@@ -5,20 +5,11 @@ import { FilterInput } from "./Filter.styled";
 
 
 export class Filter extends Component {
-    state = {
-        filter: ''
-    }
 
     static propTypes = {
         filter: PropTypes.string.isRequired,
         updateFilter: PropTypes.func.isRequired,
     }
-    
-    handleChange = (e) => {
-       const value = e.target.value
-       this.setState({ filter: value });
-       this.props.updateFilter(value)
-    };
 
     render() {
         return (
@@ -27,8 +18,8 @@ export class Filter extends Component {
                 <FilterInput 
                     type="text"
                     name="filter"
-                    value={this.state.filter}
-                    onChange={this.handleChange}
+                    value={this.props.filter}
+                    onChange={(e) => {this.props.updateFilter(e.target.value)}}
                 />
             </Box>
         )

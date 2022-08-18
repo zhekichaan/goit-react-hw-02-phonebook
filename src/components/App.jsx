@@ -41,7 +41,7 @@ export class App extends Component {
 
         <h2>Contacts</h2>
         <Filter filter={this.state.filter} updateFilter={this.updateFilter} />
-        <Contacts contacts={this.state.contacts} filter={this.state.filter} deleteContact={this.deleteContact} />
+        <Contacts contacts={this.state.contacts.filter(contact => contact.name.toLowerCase().includes(this.state.filter))} deleteContact={this.deleteContact} />
         <GlobalStyle />
       </Box>
     );
